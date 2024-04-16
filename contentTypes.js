@@ -1,16 +1,21 @@
-/** Shorthand function to create a content type mapping with the "Content-Type" entry.
- * @param {string} content_type_value The value for "Content-Type" in the mapping. */
-function createContentType(content_type_value) {
-    return {
-        "Content-Type": content_type_value
-    }
-}
-// export content type mapping object
+// export content type ampping object
 module.exports = {
-    html: createContentType("text/html"),
-    text: createContentType("text/plain"),
-    js: createContentType("text/js"),
-    jpg: createContentType("image/jpg"),
-    png: createContentType("image/png"),
-    css: createContentType("text/css"),
-}
+    html: {
+        "Content-Type": "text/html"
+    },
+    text: {
+        "Content-Type": "text/plain"
+    },
+    js: {
+        "Content-Type": "text/js"
+    },
+    jpg: {
+        "Content-Type": "image/jpg"
+    },
+    png: {
+        "Content-Type": "image/png"
+    },
+    css: {
+        "Content-Type": "text/css"
+    }
+};
