@@ -10,29 +10,23 @@ const app = express();
 
 app.set("port", process.env.PORT || 3000);
 
+app.set("view engine", "ejs");
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.htm);
-    utils.getFile("views/index.html", res);                                                                                                                         
-});
-app.get("/productview.html", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.html);
-    utils.getFile("views/productview.html", res);
-});
-app.get("/searchview.html", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.html);
-    utils.getFile("views/searchview.html", res);
-});
-app.get("/shoppingcart.html", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.html);
-    utils.getFile("views/shoppingcart.html", res);
-});
 app.get("/bootstrap.css", (req, res) => {
     res.writeHead(httpStatus.OK, contentTypes.css);
     utils.getFile("public/css/bootstrap-4.0.0-dist/css/bootstrap.min.css", res);
 });
+
+app.get("/", homeController.renderIndex); // Render the index view
+app.get("/shoppingcart", homeController.renderShoppingCart);
+app.get("/searchview", homeController.renderSearchView);
+app.get("/productview", homeController.renderProductView);
+
+app.use(errorController.internalServerError);
+app.use(errorController.pageNotFoundError);
 
 const port = app.get("port");
 app.listen(port, () => {
