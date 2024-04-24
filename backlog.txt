@@ -1,6 +1,6 @@
 BACKLOG
 
-- install express.js
+- install & setup express.js
 - install ejs
 - rewrite routes
 - make up user stories (one of them passing a parameter)
