@@ -4,14 +4,19 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "nodemon ."
   },
   "author": "Estella, Tobias, Nathalie",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1",
     "http-status-codes": "^2.3.0"
   },
   "devDependencies": {
-    "mocha": "^10.4.0"
+    "mocha": "^10.4.0",
+    "nodemon": "^3.1.0"
   }
 }
