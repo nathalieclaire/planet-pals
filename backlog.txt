@@ -10,6 +10,7 @@ BACKLOG
 
 - setup express and add basic structure
 - "As a john doe, I want a personalized greeting on the home page."
+- "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
 IN PROGRESS
 
 
