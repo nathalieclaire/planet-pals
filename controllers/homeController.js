@@ -9,7 +9,7 @@ exports.renderSearchView = (req, res) => {
 
 
 exports.renderProductView = (req, res) => {
-    res.render("productview");
+    res.render("productview", {username: 'stickynotebert'});
 };
 
 
