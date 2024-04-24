@@ -8,6 +8,10 @@ BACKLOG
 - merge each branch into main/master 
 - tag the version where the sprint was completed with "Sprint_02"
 
+
+- setup express and add basic structure
+- "As a john doe, I want a personalized greeting on the home page."
+- "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
 - As a user, I want to get an error view (as 404), to inform me that an error occured (that the page does not exist)
 
 IN PROGRESS
