@@ -1,7 +1,5 @@
 BACKLOG
 
-- install express.js
-- install ejs
 - make up user stories (one of them passing a parameter)
 - create branch for each story
 - merge each branch into main/master 
@@ -15,5 +13,7 @@ IN PROGRESS
 
 DONE
 
-
-
+- install express.js
+- install ejs
+- install express-ejs-layout
+- install nodemon for development
