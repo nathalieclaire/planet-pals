@@ -8,6 +8,8 @@ BACKLOG
 - merge each branch into main/master 
 - tag the version where the sprint was completed with "Sprint_02"
 
+- setup express and add basic structure
+- "As a john doe, I want a personalized greeting on the home page."
 IN PROGRESS
 
 
