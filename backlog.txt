@@ -8,7 +8,6 @@ BACKLOG
 - merge each branch into main/master 
 - tag the version where the sprint was completed with "Sprint_02"
 
-
 IN PROGRESS
 
 
@@ -16,5 +15,7 @@ IN PROGRESS
 
 DONE
 
-
-
+- install express.js
+- install ejs
+- install express-ejs-layout
+- install nodemon for development
