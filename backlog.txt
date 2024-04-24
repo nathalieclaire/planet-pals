@@ -1,10 +1,12 @@
 BACKLOG
 
+- install & setup express.js
+- install ejs
+- rewrite routes
 - make up user stories (one of them passing a parameter)
 - create branch for each story
 - merge each branch into main/master 
 - tag the version where the sprint was completed with "Sprint_02"
-- setup express and add basic structure
 
 IN PROGRESS
 
