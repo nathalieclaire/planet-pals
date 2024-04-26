@@ -1,30 +1,37 @@
-const port = 3000,
-    http = require("http"),
-    httpStatus = require("http-status-codes"),
-    router = require("./router"),
-    contentTypes = require("./contentTypes"),
-    utils = require("./utils");
+const express = require("express");
+const layouts = require("express-ejs-layouts");
+const httpStatus = require("http-status-codes");
+const contentTypes = require("./contentTypes");
+const homeController = require("./controllers/homeController");
+const errorController = require("./controllers/errorController");
+const utils = require("./utils");
 
-router.get("/", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.htm);
-    utils.getFile("views/index.html", res);                                                                                                                         
-});
-router.get("/productview.html", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.html);
-    utils.getFile("views/productview.html", res);
-});
-router.get("/searchview.html", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.html);
-    utils.getFile("views/searchview.html", res);
-});
-router.get("/shoppingcart.html", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.html);
-    utils.getFile("views/shoppingcart.html", res);
-});
-router.get("/bootstrap.css", (req, res) => {
+const app = express();
+
+app.set("port", process.env.PORT || 3000);
+
+app.set("view engine", "ejs");
+
+app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+app.get("/bootstrap.css", (req, res) => {
     res.writeHead(httpStatus.OK, contentTypes.css);
     utils.getFile("public/css/bootstrap-4.0.0-dist/css/bootstrap.min.css", res);
 });
-http.createServer(router.handle).listen(port);
-    console.log(`The server is listening on
-    ➥ port number: ${port}`);
+
+app.get("/", homeController.renderIndex2);
+app.get("/:username", homeController.renderIndex); // Render the index view
+app.get("/shoppingcart", homeController.renderShoppingCart);
+app.get("/searchview", homeController.renderSearchView);
+app.get("/productview", homeController.renderProductView);
+
+app.use(errorController.internalServerError);
+app.use(errorController.pageNotFoundError);
+
+const port = app.get("port");
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
