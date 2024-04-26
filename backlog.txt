@@ -5,12 +5,11 @@ BACKLOG
 
 
 - setup express and add basic structure
-- Branch: Story03 "As a john doe, I want a personalized greeting on the home page."
-
+- Branch: Story03 "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
 
 
 IN PROGRESS
-- Branch: Story02 "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
+- Branch: Story02 "As a john doe, I want a personalized greeting on the home page."
 
 
 DONE
