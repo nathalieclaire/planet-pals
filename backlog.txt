@@ -1,21 +1,16 @@
 BACKLOG
 
-- install & setup express.js
-- install ejs
-- rewrite routes
-- make up user stories (one of them passing a parameter)
-- create branch for each story
 - merge each branch into main/master 
 - tag the version where the sprint was completed with "Sprint_02"
 
 
 - setup express and add basic structure
-- "As a john doe, I want a personalized greeting on the home page."
-- "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
-- As a user, I want to get an error view (as 404), to inform me that an error occured (that the page does not exist)
+- Branch: Story03 "As a john doe, I want a personalized greeting on the home page."
+- Branch: Story02 "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
 
 IN PROGRESS
 
+- Branch: Story01 "As a user, I want to get an error view (as 404), to inform me that an error occured (that the page does not exist)"
 
 
 
@@ -25,3 +20,6 @@ DONE
 - install ejs
 - install express-ejs-layout
 - install nodemon for development
+- rewrite routes
+- make up user stories (one of them passing a parameter)
+- create branch for each story
