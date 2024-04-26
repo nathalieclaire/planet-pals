@@ -22,7 +22,8 @@ app.get("/bootstrap.css", (req, res) => {
     utils.getFile("public/css/bootstrap-4.0.0-dist/css/bootstrap.min.css", res);
 });
 
-app.get("/", homeController.renderIndex); // Render the index view
+app.get("/", homeController.renderIndex2);
+app.get("/:username", homeController.renderIndex); // Render the index view
 app.get("/shoppingcart", homeController.renderShoppingCart);
 app.get("/searchview", homeController.renderSearchView);
 app.get("/productview", homeController.renderProductView);

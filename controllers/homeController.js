@@ -14,5 +14,9 @@ exports.renderProductView = (req, res) => {
 
 
 exports.renderIndex = (req, res) => {
-    res.render("index");
+    res.render("index", { username: req.params.username });
+};
+
+exports.renderIndex2 = (req, res) => {
+    res.render("index", { username: 'Tobi' });
 };
