@@ -18,8 +18,7 @@ Scrum Master: Estella
 
 BACKLOG
 
-- write status report (submit as .pdf or .txt to moodle as "Group_<X>_Project_<Y>_Sprint03.txt.")
-- tag the version with "Sprint 03" -> make release
+
 
 
 IN PROGRESS
@@ -42,7 +41,8 @@ DONE
 - add Error Handling to the Application(lessons 10, 11 and 12 of unit 2)
 - Branch: Story03 "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
     (implement one more story making use of templates and partials, dynamic content)
-
+- write status report (submit as .pdf or .txt to moodle as "Group_<X>_Project_<Y>_Sprint03.txt.")
+- tag the version with "Sprint 03" -> make release
 ```
 
 ## The stories you've implemented in this sprint
