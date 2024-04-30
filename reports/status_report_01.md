@@ -54,4 +54,6 @@ DONE
 
 ## A reflection on any technical issues that you have encountered and how you resolved them (or not)
 
-We had some issues with an oversight, where we misspelled productID.
+* We had some issues with an oversight, where we misspelled productID.
+* The routing was difficult, because of the first issue.
+* Discord did not work for us this week, we had multiple issues with our communication.
