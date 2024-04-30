@@ -26,7 +26,7 @@ app.get("/", homeController.renderIndex2);
 app.get("/:username", homeController.renderIndex); // Render the index view
 app.get("/shoppingcart", homeController.renderShoppingCart);
 app.get("/searchview", homeController.renderSearchView);
-app.get("/productview", homeController.renderProductView);
+app.get("/product/:productID", homeController.renderProductView);
 
 app.use(errorController.internalServerError);
 app.use(errorController.pageNotFoundError);
