@@ -53,3 +53,5 @@ DONE
 ```
 
 ## A reflection on any technical issues that you have encountered and how you resolved them (or not)
+
+We had some issues with an oversight, where we misspelled productID.
