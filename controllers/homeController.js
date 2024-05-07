@@ -1,4 +1,3 @@
-// test products
 const products = {
     stickynotebert:{   
         productID: 1,
@@ -6,7 +5,6 @@ const products = {
         price: 9.99,
         quantity: 50,
         description: "Meet Stickynotebert, the friendly sticky note from planet Paperonia. Stickynotebert helps you organize your thoughts and keep track of important tasks.",
-        // Add more properties as needed
     },
     gizmotron:{
         productID: 2,
@@ -14,9 +12,7 @@ const products = {
         price: 24.99,
         quantity: 20,
         description: "The GizmoTron is the ultimate gadget for tech enthusiasts. Packed with features and advanced functionality, it's a must-have for every tech-savvy individual.",
-        // Add more properties as needed
     },
-    // Add more products as needed
 };
 
 
@@ -44,5 +40,3 @@ exports.renderIndex = (req, res) => {
 exports.renderIndex2 = (req, res) => {
     res.render("index", { username: 'Tobi' });
 };
-
-
