@@ -7,7 +7,9 @@ BACKLOG
 
 IN PROGRESS
 
-
+- adding data to database
+- implementing mongoDB and mangoose
+- implementing story: "As a user I want to get a detailProductView, which will get its information from the database"
 
 DONE
 
