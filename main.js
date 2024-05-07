@@ -12,6 +12,8 @@ app.set("port", process.env.PORT || 3000);
 
 app.set("view engine", "ejs");
 
+app.use(express.static("public"));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -20,10 +22,11 @@ app.get("/bootstrap.css", (req, res) => {
     utils.getFile("public/css/bootstrap-4.0.0-dist/css/bootstrap.min.css", res);
 });
 
-app.get("/", homeController.renderIndex); // Render the index view
+app.get("/", homeController.renderIndex2);
+app.get("/:username", homeController.renderIndex); // Render the index view
 app.get("/shoppingcart", homeController.renderShoppingCart);
 app.get("/searchview", homeController.renderSearchView);
-app.get("/productview", homeController.renderProductView);
+app.get("/product/:productID", homeController.renderProductView);
 
 app.use(errorController.internalServerError);
 app.use(errorController.pageNotFoundError);

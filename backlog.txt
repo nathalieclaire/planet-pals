@@ -1,18 +1,9 @@
+Product Owner: Nathalie
+Scrum Master: Estella
+
 BACKLOG
 
-- install & setup express.js
-- install ejs
-- rewrite routes
-- make up user stories (one of them passing a parameter)
-- create branch for each story
-- merge each branch into main/master 
-- tag the version where the sprint was completed with "Sprint_02"
 
-
-- setup express and add basic structure
-- "As a john doe, I want a personalized greeting on the home page."
-- "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
-- As a user, I want to get an error view (as 404), to inform me that an error occured (that the page does not exist)
 
 IN PROGRESS
 
@@ -20,10 +11,21 @@ IN PROGRESS
 - implementing mongoDB and mangoose
 - implementing story: "As a user I want to get a detailProductView, which will get its information from the database"
 
-
 DONE
 
 - install express.js
 - install ejs
 - install express-ejs-layout
 - install nodemon for development
+- rewrite routes
+- make up user stories (one of them passing a parameter)
+- create branch for each story
+- Branch: Story01 "As a user, I want to get an error view (as 404), to inform me that an error occured (that the page does not exist)"
+- Branch: Story02 "As a john doe, I want a personalized greeting on the home page."
+- merge each branch into main/master 
+- tag the version where the sprint was completed with "Sprint_02"
+- add Error Handling to the Application(lessons 10, 11 and 12 of unit 2)
+- Branch: Story03 "As a user, I want to be able to click an item on the homepage and be routed to the product's page."
+    (implement one more story making use of templates and partials, dynamic content)
+- write status report (submit as .pdf or .txt to moodle as "Group_<X>_Project_<Y>_Sprint03.txt.")
+- tag the version with "Sprint 03" -> make release
