@@ -23,6 +23,7 @@ exports.renderShoppingCart = (req, res) => {
 
 exports.renderSearchView = (req, res) => {
     res.render("searchview", {products: req.data});
+}
 
 
 exports.renderProductView = (req, res) => {
