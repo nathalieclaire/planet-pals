@@ -35,14 +35,3 @@ exports.saveProduct = (req, res) => {
       }
     })
 }
-exports.getFilteredProductsByName = (req, res) => {
-  Product.find({ name: req.params.filter })
-    .exec()
-    .then((products) => {
-      res.render('searchview', { products: products });
-    })
-    .catch((error) => {
-      console.error(error.message);
-      return [];
-    });
-}
