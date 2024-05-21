@@ -1,1 +1,14 @@
+Product Owner: Nathalie
+Scrum Master: Estella
 
+BACKLOG
+
+
+
+IN PROGRESS
+- adding controllers
+- adding promises (queries)
+
+
+
+DONE
