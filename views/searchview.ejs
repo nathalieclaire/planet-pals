@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1 class="display-4 font-weight-bold m-3">searchview</h1>
+    <form action="/searchview" method="GET">
+        <input type="text" name="search" placeholder="Search">
+        <button type="submit">Search</button>
+    </form>
     <% products.forEach(product => { %>
         <h2><%= product.name %></h2>
         <p><%= product.productID %></p>

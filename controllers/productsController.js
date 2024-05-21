@@ -1,7 +1,13 @@
 const Product = require('./../models/productModel');
 
 exports.getAllProducts = (req, res) => {
-  Product.find({})
+  let filter = {};
+  const search = req.query.search;
+  console.log('search', search);
+  if (search) {
+    filter = { name: search };
+  }
+  Product.find(filter)
     .exec()
     .then((products) => {
       res.render('searchview', { products: products });
