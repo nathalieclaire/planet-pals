@@ -25,6 +25,11 @@ exports.renderSearchView = (req, res) => {
     res.render("searchview", {products: req.data});
 };
 
+exports.renderFilterView = (req, res) => {
+    console.log(req.params.search);
+    res.render("searchview", {products: req.data});
+};
+
 
 exports.renderProductView = (req, res) => {
     const productID = req.params.productID;
