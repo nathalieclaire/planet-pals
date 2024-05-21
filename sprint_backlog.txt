@@ -8,7 +8,7 @@ BACKLOG
 IN PROGRESS
 - adding controllers
 - adding promises (queries)
-
+- add story "as a user i want to be able to search for one specific product by name"
 
 
 DONE
