@@ -1,10 +1,19 @@
 const express = require("express");
 const layouts = require("express-ejs-layouts");
 const httpStatus = require("http-status-codes");
+const mongoose = require('mongoose');
 const contentTypes = require("./contentTypes");
 const homeController = require("./controllers/homeController");
 const errorController = require("./controllers/errorController");
 const utils = require("./utils");
+const productModel = require("./models/productModel");
+const productSeed = require("./models/productSeed");
+const db = require("./controllers/databaseController");
+mongoose.connect('mongodb://localhost:27017/basic');
+mongoose.connection.once('open', () => { console.log('open!') }) // delete?
+
+db.fill(productSeed)
+
 
 const app = express();
 
@@ -27,7 +36,6 @@ app.get("/:username", homeController.renderIndex); // Render the index view
 app.get("/shoppingcart", homeController.renderShoppingCart);
 app.get("/searchview", homeController.renderSearchView);
 app.get("/product/:productID", homeController.renderProductView);
-
 app.use(errorController.internalServerError);
 app.use(errorController.pageNotFoundError);
 

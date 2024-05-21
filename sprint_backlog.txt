@@ -1,0 +1,16 @@
+Product Owner: Nathalie
+Scrum Master: Estella
+
+BACKLOG
+
+
+
+IN PROGRESS
+
+
+
+DONE
+- adding controllers
+- adding promises (queries)
+- add story "as a user i want to be able to search for one specific product by name"
+- add story "as a user i want to be able to get an overview of all products when i go to the "searchview"
