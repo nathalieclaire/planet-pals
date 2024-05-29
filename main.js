@@ -10,6 +10,7 @@ const productModel = require("./models/productModel");
 const productSeed = require("./models/productSeed");
 const db = require("./controllers/databaseController");
 const productsController = require('./controllers/productsController');
+const registerController = require('./controllers/registerController');
 mongoose.connect('mongodb://localhost:27017/basic');
 mongoose.connection.once('open', () => { console.log('open!') }) // delete?
 
@@ -37,6 +38,8 @@ app.get("/greeting/:username", homeController.renderIndex); // Render the index 
 app.get("/shoppingcart", homeController.renderShoppingCart);
 app.get("/searchview", productsController.getAllProducts);
 app.get("/product/:productID", homeController.renderProductView);
+app.get("/register", registerController.renderRegisterView);
+app.post("/register", registerController.registerUser);
 app.use(errorController.internalServerError);
 app.use(errorController.pageNotFoundError);
 

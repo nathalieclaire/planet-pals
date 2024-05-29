@@ -1,29 +1,24 @@
 const mongoose = require('mongoose');
 const UserSchema = new mongoose.Schema({
-  userID: {
-    type: String,
-    unique: true,
-    required: true
-  },
   firstName: {
     type: String,
-    required: true
+    required: false
   },
   lastName: {
     type: String,
-    required: true
+    required: false
   },
   email: {
     type: String,
-    required: true
+    required: false
   },
   password: {
     type: String,
-    required: true
+    required: false
   },
   address: {
     type: String,
-    required: true
+    required: false
   },
 
   // Add a reference to the shoppingCart model
