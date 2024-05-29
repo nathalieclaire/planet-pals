@@ -2,12 +2,12 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
-- add model user + validation
-- add model shoppingCart + validation
-- add model planet + validation
-- add validation to product model
-- add associations between all models
-- make overview table of all users
+- add validation to product model (story 7)
+- add model user + validation (story 8)
+- add model shoppingCart + validation (story 9)
+- add model planet + validation (story 10)
+- add associations between all models (story 11)
+- make overview table of all users (story 12)
 
 
 IN PROGRESS
