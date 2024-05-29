@@ -2,7 +2,6 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
-- add validation to product model (story 7)
 - add model user + validation (story 8)
 - add model shoppingCart + validation (story 9)
 - add model planet + validation (story 10)
@@ -15,4 +14,4 @@ IN PROGRESS
 
 
 DONE
-
+- add validation to product model (story 7)
