@@ -2,7 +2,12 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
-
+- add validation to product model (story 7)
+- add model user + validation (story 8)
+- add model shoppingCart + validation (story 9)
+- add model planet + validation (story 10)
+- add associations between all models (story 11)
+- make overview table of all users (story 12)
 
 
 IN PROGRESS
@@ -10,7 +15,4 @@ IN PROGRESS
 
 
 DONE
-- adding controllers
-- adding promises (queries)
-- add story "as a user i want to be able to search for one specific product by name"
-- add story "as a user i want to be able to get an overview of all products when i go to the "searchview"
+
