@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users table</title>
+    <link rel="stylesheet" href="/bootstrap.css"> 
+</head>
+<body>
+    <h1 class="display-4 font-weight-bold m-3">users table</h1>
+    <% users.forEach(user => { %>
+        <h2><%= user.firstName %></h2>
+          <p><%= user.firstName %></p>
+          <p><%= user.lastName %></p>
+          <p><%= user.email %></p>
+          <p><%= user.addressname %></p>
+    <% }) %>
+</body>
+</html>
