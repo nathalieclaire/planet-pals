@@ -23,5 +23,14 @@ const PlanetSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+
+    // Add a reference to the Product model
+    // (one planet can have many products, and one product can be from exactly one planet)
+    products: [
+        {
+            type: mongoose.Schema.Types.ObjectId, 
+            ref: 'Product'
+        }
+    ]
 });
 module.exports = mongoose.model('Planet', PlanetSchema);
