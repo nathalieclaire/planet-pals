@@ -1,10 +1,5 @@
 const mongoose = require('mongoose');
 const PlanetSchema = new mongoose.Schema({
-    planetID: {
-        type: String,
-        required: true,
-        unique: true
-    },
     name: {
         type: String,
         required: true
