@@ -45,4 +45,11 @@ DONE
 - Branch: 12 make overview table of all users
     (Find one or more stories to implement at least one model association, one validation and one overview table.)
 ```
+
+## Reflection
+
+> Can you ensure that an associated model instance is available on insert of the main model?
+
+This is done with the `ref` attribute inside of a model.
+
 ![alt text](image.png)
