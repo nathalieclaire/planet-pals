@@ -1,13 +1,7 @@
 const Product = require('./../models/productModel');
 
 exports.getAllProducts = (req, res) => {
-  let filter = {};
-  const search = req.query.search;
-  console.log('search', search);
-  if (search) {
-    filter = { name: search };
-  }
-  Product.find(filter)
+  Product.find({})
     .exec()
     .then((products) => {
       res.render('searchview', { products: products });
@@ -17,6 +11,25 @@ exports.getAllProducts = (req, res) => {
       return [];
     });
 }
+
+exports.getFilteredProducts = (req, res) => {
+  let filter = {};
+  const search = req.body.search;
+  console.log("filter:" + search)
+  if (search !== "") {
+    filter = { name: search };
+  }
+  Product.find(filter)
+    .exec()
+    .then((products) => {
+      res.render('searchview-products', { products: products });
+    })
+    .catch((error) => {
+      console.error(error.message);
+      return [];
+    });
+}
+
 exports.saveProduct = (req, res) => {
   new Product(
     req.body.productID,
