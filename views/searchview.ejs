@@ -11,10 +11,12 @@
 </head>
 <body>
     <h1 class="display-4 font-weight-bold m-3">searchview</h1>
-    <form hx-post="/searchview" hx-target="#products">
-        <input type="text" name="search" placeholder="Search">
-        <button type="submit">Search</button>
-    </form>
+    <input  type="text"
+            name="search"
+            hx-post="/searchview"
+            hx-trigger="keyup changed"
+            hx-target="#products"
+            placeholder="Search...">
     <div id="products">
         <%- include('searchview-products'); %>
     </div>
