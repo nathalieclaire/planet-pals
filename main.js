@@ -15,6 +15,7 @@ const usersController = require('./controllers/usersController');
 mongoose.connect('mongodb://localhost:27017/basic');
 mongoose.connection.once('open', () => { console.log('open!') }) // delete?
 
+
 db.fill(productSeed)
 
 
