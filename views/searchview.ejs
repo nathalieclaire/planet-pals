@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>searchview</title>
-    <link rel="stylesheet" href="/bootstrap.css"> 
+    <link rel="stylesheet" href="/bootstrap.css">
+    <script src="https://unpkg.com/htmx.org@1.9.12"
+            integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <h1 class="display-4 font-weight-bold m-3">searchview</h1>
-    <form action="/searchview" method="GET">
-        <input type="text" name="search" placeholder="Search">
-        <button type="submit">Search</button>
-    </form>
-    <% products.forEach(product => { %>
-        <h2><%= product.name %></h2>
-        <p><%= product.productID %></p>
-        <p><%= product.name %></p>
-        <p><%= product.price %></p>
-        <p><%= product.quantity %></p>
-        <p><%= product.description %></p>
-    <% }) %>
+    <input  type="text"
+            name="search"
+            hx-post="/searchview"
+            hx-trigger="keyup changed"
+            hx-target="#products"
+            placeholder="Search...">
+    <div id="products">
+        <%- include('searchview-products'); %>
+    </div>
 </body>
 </html>

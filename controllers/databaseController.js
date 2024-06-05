@@ -7,6 +7,9 @@ exports.create_product = (item) => {
 exports.fill = (seed) => {
   for (const item of seed) {
     const product = new Product(item);
-    product.save().then(() => console.log(`saved ${product.name}`));
+    product
+      .save()
+      .then(() => console.log(`saved ${product.name}`))
+      .catch(() => console.log(`unable to save ${product.name}`));
   }
 }

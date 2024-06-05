@@ -38,6 +38,7 @@ app.get("/", homeController.renderIndex2);
 app.get("/greeting/:username", homeController.renderIndex); // Render the index view
 app.get("/shoppingcart", homeController.renderShoppingCart);
 app.get("/searchview", productsController.getAllProducts);
+app.post("/searchview", productsController.getFilteredProducts);
 app.get("/product/:productID", homeController.renderProductView);
 app.get("/register", registerController.renderRegisterView);
 app.post("/register", registerController.registerUser);
