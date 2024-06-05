@@ -2,7 +2,7 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
-- add products from searchview to shopping cart (app.post("/shoppingcart", shoppingcartController.addToCart);)
+- add products from searchview to shopping cart (app.post("/shoppingcart", shoppingcartController.addToCart);) 
 - read ShoppingCart: app.get("/shoppingcart", shoppingcartController.renderShoppingCart);
 - updateShoppingCart from searchview: app.put("/shoppingcart", shoppingcartController.updateShoppingCart);
 - delete from shopping cart in shopping cart view: app.delete("/shoppingcart", shoppingcartController.deleteFromCart);
