@@ -14,29 +14,20 @@ planet-pals - [v7.0.0](https://github.com/nathalieclaire/planet-pals/releases/ta
 
 WHAT WE'VE ALREADY IMPLEMENTED IN THE PAST SPRINTS:
 
-Models:
+Here: What the you should be able to as a user:
 
-* Planet       create( ) read( ) update( ) delete( )
-* Product      create( ) read(x) update( ) delete( ) -> /searchview
-* ShoppingCart           read( ) update( )
+* Planet       read(x) -> planet is a property of product
+* Product      read(x) -> /searchview
+* ShoppingCart read( ) update( )
 * User         create(x) read(x) update( ) delete( ) -> /register, /users
 
 WHAT WE'RE GOING TO IMPLEMENT IN THIS SPRINT:
 
-* create Planet:
-* read Planet:
-* update Planet:
-* delete Planet:
-
-* create Product:
-* update Product:
-* delete Product:
-
 * read ShoppingCart: app.get("/shoppingcart", homeController.renderShoppingCart);
 * updateShoppingCart: app.put("/shoppingcart", homeController.updateShoppingCart);
 
-* update User:
-* delete User:
+* update User: app.put("/profile/:email", usersController.updateUser);
+* delete User: app.delete("/profile/:email", usersController.deleteUser);
 
 ## The sprint backlog as a text file
 

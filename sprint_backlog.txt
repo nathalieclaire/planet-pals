@@ -2,6 +2,11 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
+- read ShoppingCart: app.get("/shoppingcart", homeController.renderShoppingCart);
+- updateShoppingCart: app.put("/shoppingcart", homeController.updateShoppingCart);
+
+- update User: app.put("/profile/:email", usersController.updateUser);
+- delete User: app.delete("/profile/:email", usersController.deleteUser);
 
 
 IN PROGRESS
@@ -9,9 +14,4 @@ IN PROGRESS
 
 
 DONE
-- add validation to product model (story 7)
-- add model user + validation (story 8)
-- add model shoppingCart + validation (story 9)
-- add model planet + validation (story 10)
-- add associations between all models (story 11)
-- make overview table of all users (story 12)
+
