@@ -23,8 +23,10 @@ Here: What the you should be able to as a user:
 
 WHAT WE'RE GOING TO IMPLEMENT IN THIS SPRINT:
 
-* read ShoppingCart: app.get("/shoppingcart", homeController.renderShoppingCart);
-* updateShoppingCart: app.put("/shoppingcart", homeController.updateShoppingCart);
+* add products from searchview to shopping cart (app.post("/shoppingcart", shoppingcartController.addToCart);)
+* read ShoppingCart: app.get("/shoppingcart", shoppingcartController.renderShoppingCart);
+* updateShoppingCart from searchview: app.put("/shoppingcart", shoppingcartController.updateShoppingCart);
+* delete from shopping cart in shopping cart view: app.delete("/shoppingcart", shoppingcartController.deleteFromCart);
 
 * update User: app.put("/profile/:email", usersController.updateUser);
 * delete User: app.delete("/profile/:email", usersController.deleteUser);
