@@ -11,3 +11,33 @@ exports.renderUsersTable = (req, res) => {
       return [];
     });
 }
+
+exports.updateUser = (req, res) => {
+  const search = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password,
+    address: req.body.address
+  };
+  console.log(search)
+  User.updateOne(search)
+  .exec()
+  .then((user) => {
+    res.render();
+  })
+  .catch((error) => {
+    console.error(error.message);
+    return [];
+  });
+}
+
+exports.deleteUser = (req, res) => {
+  const search = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password,
+    address: req.body.address
+  };
+}

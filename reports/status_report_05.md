@@ -40,44 +40,6 @@ WHAT WE'RE GOING TO IMPLEMENT IN THIS SPRINT:
 
 ## The sprint backlog as a text file
 
-```
-Product Owner: Nathalie
-Scrum Master: Estella
-
-BACKLOG
-
-
-
-IN PROGRESS
-
-
-
-DONE
-- add validation to product model (story 7)
-- add model user + validation (story 8)
-- add model shoppingCart + validation (story 9)
-- add model planet + validation (story 10)
-- add associations between all models (story 11)
-- make overview table of all users (story 12)
-
-```
-
 ## The stories you've implemented in this sprint
 
-```
-- Branch: 07 add validation to product model
-- Branch: 08 add model user + validation
-- Branch: 09 add model shoppingCart + validation
-- Branch: 10 add model planet + validation
-- Branch: 11 add associations between all models
-- Branch: 12 make overview table of all users
-    (Find one or more stories to implement at least one model association, one validation and one overview table.)
-```
-
 ## Reflection
-
-> Can you ensure that an associated model instance is available on insert of the main model?
-
-This is done with the `ref` attribute inside of a model.
-
-![alt text](image.png)

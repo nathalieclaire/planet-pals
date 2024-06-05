@@ -8,6 +8,7 @@ const errorController = require("./controllers/errorController");
 const utils = require("./utils");
 const productModel = require("./models/productModel");
 const productSeed = require("./models/productSeed");
+const userSeed = require("./models/userSeed");
 const db = require("./controllers/databaseController");
 const productsController = require('./controllers/productsController');
 const registerController = require('./controllers/registerController');
@@ -15,7 +16,8 @@ const usersController = require('./controllers/usersController');
 mongoose.connect('mongodb://localhost:27017/basic');
 mongoose.connection.once('open', () => { console.log('open!') }) // delete?
 
-db.fill(productSeed)
+db.fill(productSeed);
+db.fillUsers(userSeed);
 
 
 const app = express();
@@ -36,13 +38,15 @@ app.get("/bootstrap.css", (req, res) => {
 
 app.get("/", homeController.renderIndex2);
 app.get("/greeting/:username", homeController.renderIndex); // Render the index view
-app.get("/shoppingcart", homeController.renderShoppingCart);
+app.get("/shoppingcart", homeController.renderShoppingCart);  // Read shoppingcart
+app.put("/shoppingcart", homeController.updateShoppingCart);  // Update shoppingcart
 app.get("/searchview", productsController.getAllProducts);
 app.post("/searchview", productsController.getFilteredProducts);
 app.get("/product/:productID", homeController.renderProductView);
 app.get("/register", registerController.renderRegisterView);
 app.post("/register", registerController.registerUser);
 app.get("/users", usersController.renderUsersTable);
+app.put("/users", usersController.updateUser)
 app.use(errorController.internalServerError);
 app.use(errorController.pageNotFoundError);
 
