@@ -12,6 +12,10 @@ exports.renderUsersTable = (req, res) => {
     });
 }
 
+exports.renderLogin = (req, res) => {
+  res.render('login');
+}
+
 exports.updateUser = (req, res) => {
   const search = {
     firstName: req.body.firstName,
@@ -22,14 +26,14 @@ exports.updateUser = (req, res) => {
   };
   console.log(search)
   User.updateOne(search)
-  .exec()
-  .then((user) => {
-    res.render();
-  })
-  .catch((error) => {
-    console.error(error.message);
-    return [];
-  });
+    .exec()
+    .then((user) => {
+      res.render();
+    })
+    .catch((error) => {
+      console.error(error.message);
+      return [];
+    });
 }
 
 exports.deleteUser = (req, res) => {
@@ -40,4 +44,14 @@ exports.deleteUser = (req, res) => {
     password: req.body.password,
     address: req.body.address
   };
+}
+exports.renderUser = (req, res) => {
+  User.findById(req.body.id)
+    .exec()
+    .then((user) => {
+      res.render('profile', { user: user });
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
