@@ -1,10 +1,9 @@
 <% products.forEach(product => { %>
     <div id="product-id-<%= product.productID %>">
-        <h2><%= product.name %></h2>
-        <p><%= product.productID %></p>
-        <p><%= product.name %></p>
-        <p><%= product.price %></p>
-        <p><%= product.quantity %></p>
-        <p><%= product.description %></p>
+        <h2 class="display-4 font-weight-bold m-3"><%= product.name %></h2>
+        <p>Item number: <%= product.productID %></p>
+        <p>Price: $<%= product.price %></p>
+        <p>Quantity Available: <%= product.quantity %></p>
+        <p>Description: <%= product.description %></p>
     </div>
 <% }) %>

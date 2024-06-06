@@ -6,7 +6,7 @@
     <title>productview</title>
     <link rel="stylesheet" href="/bootstrap.css"> 
 </head>
-<body>
-  <h1>Thanks for registering, <%- user.firstName %></h1>
+<body onload="localStorage.setItem('id', '<%= id %>')">
+  <h1>Thanks for registering, <%- user %></h1>
 </body>
 </html>

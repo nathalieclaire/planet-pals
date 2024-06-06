@@ -8,12 +8,28 @@
 </head>
 <body>
     <h1 class="display-4 font-weight-bold m-3">users table</h1>
-    <% users.forEach(user => { %>
-        <h2><%= user.firstName %></h2>
-          <p><%= user.firstName %></p>
-          <p><%= user.lastName %></p>
-          <p><%= user.email %></p>
-          <p><%= user.addressname %></p>
-    <% }) %>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">firstName</th>
+                <th scope="col">lastName</th>
+                <th scope="col">email</th>
+                <th scope="col">address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+            <tr>
+                <div>
+                    <td><input name="firstName" type="text" value="<%= user.firstName %>"></input></td>
+                    <td><input name="lastName" type="text" value="<%= user.lastName %>"></input></td>
+                    <td><input name="email" type="email" value="<%= user.email %>"></input></td>
+                    <td><input name="address" type="text" value="<%= user.address %>"></input></td>
+                </div>
+                <td><button name="update" hx-put="/users" hx-target="closest div" hx-include="closest div">Update</button></td>
+            </tr>  
+            <% }) %>
+            </tbody>
+        </table>
 </body>
 </html>
