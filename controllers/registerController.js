@@ -1,4 +1,6 @@
 const User = require('./../models/userModel');
+const ShoppingCart = require('./../models/shoppingCartModel');
+
 exports.renderRegisterView = (req, res) => {
   res.render('register');
 }
@@ -10,7 +12,8 @@ exports.registerUser = (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password,
-      address: req.body.address
+      address: req.body.address,
+      ShoppingCart: new ShoppingCart({ products: [] }),
     }
   )
     .save()
