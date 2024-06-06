@@ -16,11 +16,6 @@ const products = {
 };
 
 
-exports.renderShoppingCart = (req, res) => {
-    res.render("shoppingcart");
-};
-
-
 exports.renderSearchView = (req, res) => {
     res.render("searchview", {products: req.data});
 }

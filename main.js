@@ -12,6 +12,7 @@ const db = require("./controllers/databaseController");
 const productsController = require('./controllers/productsController');
 const registerController = require('./controllers/registerController');
 const usersController = require('./controllers/usersController');
+const shoppingcartController = require('./controllers/shoppingcartController');
 mongoose.connect('mongodb://localhost:27017/basic');
 mongoose.connection.once('open', () => { console.log('open!') }) // delete?
 
@@ -36,7 +37,8 @@ app.get("/bootstrap.css", (req, res) => {
 
 app.get("/", homeController.renderIndex2);
 app.get("/greeting/:username", homeController.renderIndex); // Render the index view
-app.get("/shoppingcart", homeController.renderShoppingCart);
+app.get("/shoppingcart", shoppingcartController.renderShoppingCart);
+app.put("/shoppingcart", shoppingcartController.updateShoppingCart);
 app.get("/searchview", productsController.getAllProducts);
 app.post("/searchview", productsController.getFilteredProducts);
 app.get("/product/:productID", homeController.renderProductView);
