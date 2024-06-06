@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1 class="display-4 font-weight-bold m-3">shoppingcart</h1>
+    <% products.forEach(function(product) { %>
+        <div>
+            <h2><%= product.name %></h2>
+            <p><%= product.description %></p>
+        </div>
+    <% }); %>
+    <button type="button" class="btn btn-primary">Update</button>
 </body>
 </html>
