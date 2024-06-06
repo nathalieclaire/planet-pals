@@ -1,9 +1,8 @@
 const User = require('./../models/userModel');
 exports.renderRegisterView = (req, res) => {
-  res.render('register');
+  res.render('register', {id:''});
 }
 exports.registerUser = (req, res) => {
-  console.log(req.body)
   new User(
     {
       firstName: req.body.firstName,
@@ -15,7 +14,8 @@ exports.registerUser = (req, res) => {
   )
     .save()
     .then(result => {
-      res.render('register_success', {user: req.body.firstName});
+      console.log(result.id)
+      res.render('register_success', {user: req.body.firstName, id: result.id});
     })
     .catch(error => {
       if (error) {

@@ -3,7 +3,14 @@ Scrum Master: Estella
 
 BACKLOG
 
+Models:
+Planet       create( ) read( ) update( ) delete( )
+Product      create( ) read(x) update( ) delete( ) -> /searchview
+ShoppingCart           read( ) update( )
+User         create(x) read(x) update( ) delete( ) -> /
 
+user.delete -> shoppingCart.delete 
+user.create -> shoppingCart.create
 
 IN PROGRESS
 
