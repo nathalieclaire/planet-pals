@@ -52,6 +52,6 @@ exports.renderUser = (req, res) => {
       res.render('profile', { user: user });
     })
     .catch((error) => {
-      console.error(error.message);
+      res.render('register');
     });
 }

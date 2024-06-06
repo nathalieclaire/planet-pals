@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>users table</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="/bootstrap.css">
+    <script src="https://unpkg.com/htmx.org@1.9.12"
+            integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <h1 class="display-4 font-weight-bold m-3">Profile</h1>
     <ul>
         <li style="display: flex; flex-direction: row;">
-            <p><%= user.firstName %>"></p>
+            <p><%= user.firstName %></p>
             <input name="firstName" type="text" value="<%= user.firstName %>"></input>
         </li>
         <li style="display: flex; flex-direction: row;">
-            <p><%= user.lastName %>"></p>
+            <p><%= user.lastName %></p>
             <input name="lastName" type="text" value="<%= user.lastName %>"></input>
         </li>
         <li style="display: flex; flex-direction: row;">
-            <p><%= user.email %>"></p>
+            <p><%= user.email %></p>
             <input name="email" type="email" value="<%= user.email %>"></input>
         </li>
         <li style="display: flex; flex-direction: row;">
-            <p><%= user.address %>"></p>
+            <p><%= user.address %></p>
             <input name="address" type="text" value="<%= user.address %>"></input>
         </li>
     </ul>
