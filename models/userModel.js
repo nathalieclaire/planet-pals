@@ -25,7 +25,8 @@ const UserSchema = new mongoose.Schema({
   // (one user can have exactly one shopping cart, and one shopping cart is owned by exactly one user)
   shoppingCart: {
       type: mongoose.Schema.Types.ObjectId, 
-      ref: 'ShoppingCart'
+      ref: 'ShoppingCart',
+      required: true
     }
 });
 module.exports = mongoose.model('User', UserSchema);

@@ -1,14 +1,12 @@
-const User = require('./../models/shoppingCartModel');
+'use strict';
+const ShoppingCart = require('./../models/shoppingCartModel');
 const Product = require('./../models/productModel');
+
 
 exports.renderShoppingCart = (req, res) => {
     Product.find()
         .then(products => {
-            if (products.length === 0) {
-                res.render('empty', { message: 'No products added yet.' });
-            } else {
                 res.render('shoppingcart', { products: products });
-            }
         })
         .catch(err => {
             console.error(err);
