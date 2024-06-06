@@ -17,18 +17,12 @@ exports.renderLogin = (req, res) => {
 }
 
 exports.updateUser = (req, res) => {
-  const search = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password,
-    address: req.body.address
-  };
-  console.log(search)
-  User.updateOne(search)
-    .exec()
-    .then((user) => {
-      res.render();
+  const update = {};
+  update[req.body.key] = req.body.value;
+  User.findByIdAndUpdate(req.body.id, {search: update})
+  .exec()
+  .then((user) => {
+    res.render('p', {value: req.body.value});
     })
     .catch((error) => {
       console.error(error.message);
@@ -37,13 +31,14 @@ exports.updateUser = (req, res) => {
 }
 
 exports.deleteUser = (req, res) => {
-  const search = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password,
-    address: req.body.address
-  };
+  User.findByIdAndDelete(req.body.id)
+    .exec()
+    .then(() => {
+      res.render('register');
+    })
+    .catch((error) => {
+      res.render('register');
+    });
 }
 exports.renderUser = (req, res) => {
   User.findById(req.body.id)
@@ -52,6 +47,6 @@ exports.renderUser = (req, res) => {
       res.render('profile', { user: user });
     })
     .catch((error) => {
-      console.error(error.message);
+      res.render('register');
     });
 }

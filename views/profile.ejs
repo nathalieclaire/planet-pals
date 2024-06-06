@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>users table</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="/bootstrap.css">
+    <script src="https://unpkg.com/htmx.org@1.9.12"
+            integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+            crossorigin="anonymous"></script>
 </head>
 <body>
     <h1 class="display-4 font-weight-bold m-3">Profile</h1>
     <ul>
         <li style="display: flex; flex-direction: row;">
-            <p><%= user.firstName %>"></p>
-            <input name="firstName" type="text" value="<%= user.firstName %>"></input>
+            <p id="firstName"><%= user.firstName %></p>
+            <input name="value" type="text" value="<%= user.firstName %>"></input>
+            <button hx-trigger="click" hx-put="/profile" hx-vars="{id:localStorage.getItem('id'), key:'firstName'}" hx-swap="outerHTML" hx-target="#firstName" hx-include="previous input">Update</button>
         </li>
         <li style="display: flex; flex-direction: row;">
-            <p><%= user.lastName %>"></p>
-            <input name="lastName" type="text" value="<%= user.lastName %>"></input>
+            <p id="lastName"><%= user.lastName %></p>
+            <input name="value" type="text" value="<%= user.lastName %>"></input>
+            <button hx-trigger="click" hx-put="/profile" hx-vars="{id:localStorage.getItem('id'), key:'lastName'}" hx-swap="outerHTML" hx-target="#lastName" hx-include="previous input">Update</button>
         </li>
         <li style="display: flex; flex-direction: row;">
-            <p><%= user.email %>"></p>
-            <input name="email" type="email" value="<%= user.email %>"></input>
+            <p id="email"><%= user.email %></p>
+            <input name="value" type="email" value="<%= user.email %>"></input>
+            <button hx-trigger="click" hx-put="/profile" hx-vars="{id:localStorage.getItem('id'), key:'email'}" hx-swap="outerHTML" hx-target="#email" hx-include="previous input">Update</button>
         </li>
         <li style="display: flex; flex-direction: row;">
-            <p><%= user.address %>"></p>
-            <input name="address" type="text" value="<%= user.address %>"></input>
+            <p id="address"><%= user.address %></p>
+            <input name="value" type="text" value="<%= user.address %>"></input>
+            <button hx-trigger="click" hx-put="/profile" hx-vars="{id:localStorage.getItem('id'), key:'address'}" hx-swap="outerHTML" hx-target="#address" hx-include="previous input">Update</button>
         </li>
     </ul>
+    <button hx-delete="/profile" hx-vars="id:localStorage.getItem('id')" hx-target="body">Delete</button>
 </body>
