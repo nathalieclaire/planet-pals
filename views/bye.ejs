@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>users table</title>
+    <title>Bye</title>
     <link rel="stylesheet" href="/bootstrap.css">
-    <script src="/js/htmx.min.js"></script>
 </head>
-<body hx-post="/profile" hx-trigger="load" hx-vars="id:localStorage.getItem('id')"></body>
+<body>
+    <h2 class="display-4 font-weight-bold m-3">Bye, <%= name %>... :(</h2>
+</body>
 </html>
