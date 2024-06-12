@@ -12,7 +12,8 @@ planet-pals - [v8.0.0](https://github.com/nathalieclaire/planet-pals/releases/ta
 
 ## Tasks for this sprint
 
-
+* Implement hashing of passwords for secure storage in our database.
+* Implement a login page that works with the hashes.
 
 ## The sprint backlog as a text file
 
@@ -27,16 +28,14 @@ BACKLOG
 IN PROGRESS
 
 
-
 DONE
+- add support for user login based on user id and password
 
 
 ```
 
 ## The stories you've implemented in this sprint
 
-```
-
-```
+Story 19: Add support for user login based on user id and password.
 
 ## Reflection
