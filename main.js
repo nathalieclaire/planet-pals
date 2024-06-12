@@ -57,7 +57,8 @@ app.get("/profile", usersController.renderLogin);
 app.post("/profile", usersController.renderUser);
 app.put("/profile", usersController.updateUser);
 app.delete("/profile", usersController.deleteUser);
-
+app.get("/login", usersController.renderLogin);
+app.post("/login", usersController.loginUser);
 app.use(errorController.internalServerError);
 app.use(errorController.pageNotFoundError);
 
