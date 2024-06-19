@@ -2,10 +2,11 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
-
+- implement login with authenticaton
+- implement logout
 
 IN PROGRESS
 
 
 DONE
-- add support for user login based on user id and password
+
