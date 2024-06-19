@@ -1,4 +1,4 @@
-# Report sprint 08
+# Report sprint 09
 
 ## Your project name
 
@@ -24,22 +24,28 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
-- implement login with authenticaton
-- implement logout
+
 
 IN PROGRESS
 
 
 DONE
+- implement login with authenticaton
+- implement logout
 
 
 ```
 
 ## The stories you've implemented in this sprint
+- Story20: implement login with authenticaton
+- Story21: implement logout
 
-Story 20: 
 
 ## Reflection
 
-Biggest technical obtacles:
+Biggest technical obtacles: 
+- we had problems finding errors that occured due to the any-type
+- it was a bit tricky to check if our session cookie was still active after logout
+
 What would need to be adjusted to avoid these technical problems in the future?
+- avoid JavaScript

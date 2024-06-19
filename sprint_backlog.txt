@@ -3,11 +3,11 @@ Scrum Master: Estella
 
 BACKLOG
 
-- implement logout
+
 
 IN PROGRESS
 
 
 DONE
-
 - implement login with authenticaton
+- implement logout
