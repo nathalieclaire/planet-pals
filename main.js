@@ -70,6 +70,16 @@ app.get("/login", usersController.renderLogin);
 app.post("/login/password",
     passport.authenticate('local', { failureRedirect: '/login', failureFlash: true,
     successRedirect: '/'}));
+app.post("/logout", (req, res, next) => {
+    req.logout((err) => {
+        if (err) {
+            console.error('fuck')
+            return next(err);
+        }
+        res.redirect("/login");
+        console.log('success fully logged out')
+    })
+})
 
 app.use(errorController.internalServerError);
 app.use(errorController.pageNotFoundError);

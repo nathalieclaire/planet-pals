@@ -6,13 +6,16 @@
     <title>index</title>
     <link rel="stylesheet" href="/bootstrap.css"> 
 </head>
-<body>
-    <h1> It is a pleasure to make your accointance, <%= username %> </h1>
-    <h1 class="display-4 font-weight-bold m-3">index</h1>
-    <ul>
-        <li>Tobias Bayer</li>
-        <li>Estella Kinzel</li>
-        <li>Nathalie Claire Huppert</li>
-    </ul>
-</body>
+    <body>
+        <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+        <h1> It is a pleasure to make your accointance, <%= username %> </h1>
+        <h1 class="display-4 font-weight-bold m-3">index</h1>
+        <ul>
+            <li>Tobias Bayer</li>
+            <li>Estella Kinzel</li>
+            <li>Nathalie Claire Huppert</li>
+        </ul>
+    </body>
 </html>

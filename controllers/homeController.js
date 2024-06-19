@@ -17,7 +17,8 @@ const products = {
 
 
 exports.renderShoppingCart = (req, res) => {
-    res.render("shoppingcart");
+    console.log('yeeeeeeeeeeeeeeee;',req.user)
+    res.render("shoppingcart", {user: req.user});
 };
 
 

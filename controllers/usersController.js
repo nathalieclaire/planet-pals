@@ -40,9 +40,9 @@ exports.loginUser = async (req, res) => {
             const result = await verifyPassword(user.password, req.body.password);
             if (result === 'correct') {
                 console.log('correct password');
-                res.render('index', {username: user.firstName})
+                res.render('index', {username: user.firstName});
             } else if (result === 'wrong') {
-                res.render('login')
+                res.render('login');
                 console.log('wrong password');
             } else {
                console.log('error in verifyPassword');
@@ -114,6 +114,7 @@ async function verify(req, user, done) {
         return done(null, false);
     }
     if (await verifyPassword(user.password, req.body.password) === 'correct') {
+        req.body.user = user;
         return done(null, user);
     }
     return done(null, false);
