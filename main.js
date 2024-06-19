@@ -2,6 +2,8 @@ const express = require("express");
 const layouts = require("express-ejs-layouts");
 const httpStatus = require("http-status-codes");
 const mongoose = require('mongoose');
+const passport = require('passport');
+const passport_strategy = require('passport-strategy')
 const contentTypes = require("./contentTypes");
 const homeController = require("./controllers/homeController");
 const errorController = require("./controllers/errorController");
@@ -31,6 +33,13 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use(require('serve-static')(__dirname + '/../../public'));
+app.use(require('cookie-parser')());
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.get("/bootstrap.css", (req, res) => {
     res.writeHead(httpStatus.OK, contentTypes.css);
     utils.getFile("public/css/bootstrap-4.0.0-dist/css/bootstrap.min.css", res);
@@ -58,7 +67,10 @@ app.post("/profile", usersController.renderUser);
 app.put("/profile", usersController.updateUser);
 app.delete("/profile", usersController.deleteUser);
 app.get("/login", usersController.renderLogin);
-app.post("/login", usersController.loginUser);
+app.post("/login/password",
+    passport.authenticate('local', { failureRedirect: '/login', failureFlash: true,
+    successRedirect: '/'}));
+
 app.use(errorController.internalServerError);
 app.use(errorController.pageNotFoundError);
 
