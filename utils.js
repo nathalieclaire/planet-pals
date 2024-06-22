@@ -1,9 +1,10 @@
-const fs = require("fs"),
-    httpStatus = require("http-status-codes"),
-    contentTypes = require("./contentTypes");
+import fs from "fs";
+import httpStatus from "http-status-codes";
+
+import contentTypes from "./contentTypes.js";
 
 // export a function to red files and return a response
-module.exports = { 
+export default {
     getFile: (file, res) => {
         fs.readFile(`./${file}`, (error, data) => {
             if (error) {

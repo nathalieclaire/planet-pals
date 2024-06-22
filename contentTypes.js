@@ -1,5 +1,5 @@
 // export content type ampping object
-module.exports = {
+export default {
     html: {
         "Content-Type": "text/html"
     },

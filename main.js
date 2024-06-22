@@ -1,20 +1,30 @@
-const express = require("express");
-const layouts = require("express-ejs-layouts");
-const httpStatus = require("http-status-codes");
-const mongoose = require('mongoose');
-const passport = require('passport');
-const passport_strategy = require('passport-strategy')
-const contentTypes = require("./contentTypes");
-const homeController = require("./controllers/homeController");
-const errorController = require("./controllers/errorController");
-const utils = require("./utils");
-const productModel = require("./models/productModel");
-const productSeed = require("./models/productSeed");
-const userSeed = require("./models/userSeed");
-const db = require("./controllers/databaseController");
-const productsController = require('./controllers/productsController');
-const registerController = require('./controllers/registerController');
-const usersController = require('./controllers/usersController');
+import path from "node:path";
+import express from "express";
+import layouts from "express-ejs-layouts";
+import httpStatus from "http-status-codes";
+import mongoose from "mongoose";
+import passport from "passport";
+import passport_strategy from "passport-strategy";
+import serveStatic from 'serve-static';
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import expressSession from "express-session";
+import contentTypes from "./contentTypes.js";
+import homeController from "./controllers/homeController.js";
+import errorController from "./controllers/errorController.js";
+import utils from "./utils.js";
+import productModel from "./models/productModel.js";
+import productSeed from "./models/productSeed.js";
+import userSeed from "./models/userSeed.js";
+import db from "./controllers/databaseController.js";
+import productsController from "./controllers/productsController.js";
+import registerController from "./controllers/registerController.js";
+import usersController from "./controllers/usersController.js";
+import session from "express-session";
+
+
+
+const __dirname = import.meta.dirname;
 mongoose.connect('mongodb://localhost:27017/basic');
 mongoose.connection.once('open', () => { console.log('open!') }) // delete?
 
@@ -33,14 +43,15 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use(require('serve-static')(__dirname + '/../../public'));
-app.use(require('cookie-parser')());
-app.use(require('body-parser').urlencoded({ extended: true }));
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(serveStatic(__dirname + '/../../public'));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(expressSession({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.get("/bootstrap.css", (req, res) => {
+    req.body
     res.writeHead(httpStatus.OK, contentTypes.css);
     utils.getFile("public/css/bootstrap-4.0.0-dist/css/bootstrap.min.css", res);
 });

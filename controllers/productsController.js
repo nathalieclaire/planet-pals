@@ -1,6 +1,6 @@
-const Product = require('./../models/productModel');
+import Product from './../models/productModel.js';
 
-exports.getAllProducts = (req, res) => {
+const getAllProducts = (req, res) => {
   Product.find({})
     .exec()
     .then((products) => {
@@ -12,7 +12,7 @@ exports.getAllProducts = (req, res) => {
     });
 }
 
-exports.getFilteredProducts = (req, res) => {
+const getFilteredProducts = (req, res) => {
   let filter = {};
   const search = req.body.search;
   console.log("filter:" + search)
@@ -30,7 +30,7 @@ exports.getFilteredProducts = (req, res) => {
     });
 }
 
-exports.saveProduct = (req, res) => {
+const saveProduct = (req, res) => {
   new Product(
     req.body.productID,
     req.body.name,
@@ -48,3 +48,5 @@ exports.saveProduct = (req, res) => {
       }
     })
 }
+
+export default {getAllProducts, getFilteredProducts, saveProduct};
