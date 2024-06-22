@@ -1,7 +1,8 @@
-const User = require('./../models/userModel');
-const argon2 = require('argon2');
-const passport = require("passport");
-const LocalStrategy = require("passport-local");
+import argon2 from 'argon2';
+import passport from "passport";
+import LocalStrategy from "passport-local";
+
+import User from './../models/userModel.js';
 
 async function verifyPassword(hashOfPassword, plainTextPassword) {
     try {
@@ -16,7 +17,7 @@ async function verifyPassword(hashOfPassword, plainTextPassword) {
     }
 }
 
-exports.renderUsersTable = (req, res) => {
+const renderUsersTable = (req, res) => {
   User.find({})
     .then((users) => {
       res.render('usersTable', { users: users });
@@ -26,10 +27,10 @@ exports.renderUsersTable = (req, res) => {
     });
 }
 
-exports.renderLogin = (req, res) => {
+const renderLogin = (req, res) => {
   res.render('login');
 }
-exports.loginUser = async (req, res) => {
+const loginUser = async (req, res) => {
     User.findOne({email: req.body.user})
         .then(async (user) => {
             if (user == null) {
@@ -52,7 +53,7 @@ exports.loginUser = async (req, res) => {
             console.error(error);
         })
 }
-exports.updateUser = (req, res) => {
+const updateUser = (req, res) => {
   const update = {};
   update[req.body.key] = req.body.value;
   User.findByIdAndUpdate(req.body.id, update, { new: true })
@@ -69,7 +70,7 @@ exports.updateUser = (req, res) => {
     });
 }
 
-exports.deleteUser = (req, res) => {
+const deleteUser = (req, res) => {
   User.findByIdAndDelete(req.body.id)
     .then((user) => {
       if (user === null) {
@@ -83,7 +84,7 @@ exports.deleteUser = (req, res) => {
       res.render('register');
     });
 }
-exports.renderUser = (req, res) => {
+const renderUser = (req, res) => {
   console.log(req.body.id)
   User.findById(req.body.id)
     .then((user) => {
@@ -132,3 +133,5 @@ passport.deserializeUser(async (email, done) => {
         done(err);
     }
 });
+
+export default {renderUser, renderUsersTable, renderLogin, loginUser, updateUser, deleteUser};

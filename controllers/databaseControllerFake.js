@@ -1,8 +1,8 @@
-const Product = require('./../models/productModel');
+import Product from './../models/productModel.js';
 
 const fake_database = {};
 
-exports.create_product = (item) => {
+const create_product = (item) => {
   if (item.description === undefined) {
     throw new TypeError('item needs "description".');
   }
@@ -20,8 +20,10 @@ exports.create_product = (item) => {
   }
   fake_db[item.productID] = item;
 }
-exports.fill = (seed) => {
+const fill = (seed) => {
   for (const item of seed) {
     fake_database[item.productID] = item
   }
 }
+
+export default {create_product, fill};

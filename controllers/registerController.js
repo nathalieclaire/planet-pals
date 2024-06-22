@@ -1,14 +1,20 @@
-const argon2 = require("argon2");
-const User = require('./../models/userModel');
-exports.renderRegisterView = (req, res) => {
+import argon2 from "argon2";
+
+import User from './../models/userModel.js';
+
+const renderRegisterView = (req, res) => {
   res.render('register', {id:''});
 }
 async function hashPassword(plainTextPassword) {
     return await argon2.hash(plainTextPassword);
 }
 
+<<<<<<< HEAD
 exports.registerUser = async (req, res) => {
     console.log(req.body);
+=======
+const registerUser = async (req, res) => {
+>>>>>>> 7444d9c (chore: modules are better for ts...)
   new User(
     {
       firstName: req.body.firstName,
@@ -30,3 +36,5 @@ exports.registerUser = async (req, res) => {
       }
     })
 }
+
+export default {renderRegisterView, registerUser};

@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
+
 const ShoppingCartSchema = new mongoose.Schema({
     itemQuantity: {
         type: Number,
@@ -26,4 +27,5 @@ const ShoppingCartSchema = new mongoose.Schema({
         ref: 'User'
     }
 });
-module.exports = mongoose.model('ShoppingCart', ShoppingCartSchema);
+
+export default mongoose.model('ShoppingCart', ShoppingCartSchema);

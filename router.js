@@ -1,5 +1,5 @@
 const httpStatus = require("http-status-codes"),
-    contentTypes = require("./contentTypes"),
+    contentTypes = require("./contentTypes.js"),
     utils = require("./utils");
 
 // create route objects to hold route functions

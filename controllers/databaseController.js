@@ -1,13 +1,13 @@
-const Product = require('./../models/productModel');
-const User = require('./../models/userModel');
+import Product from './../models/productModel.js';
+import User from './../models/userModel.js';
 
 
-exports.create_product = (item) => {
+const create_product = (item) => {
   const product = new Product(item);
   product.save().then(() => console.log(`saved ${product.name}`));
 }
 
-exports.fill = (seed) => {
+const fill = (seed) => {
   for (const item of seed) {
     const product = new Product(item);
     product
@@ -17,7 +17,7 @@ exports.fill = (seed) => {
   }
 }
 
-exports.fillUsers = (seed) => {
+const fillUsers = (seed) => {
   for (const item of seed) {
     const user = new User(item);
     user
@@ -26,3 +26,5 @@ exports.fillUsers = (seed) => {
       .catch(() => console.log(`unable to save ${user.firstName}`));
   }
 }
+
+export default {create_product, fill, fillUsers}
