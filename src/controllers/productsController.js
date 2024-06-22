@@ -1,6 +1,6 @@
 import Product from './../models/productModel.js';
 
-const getAllProducts = (req, res) => {
+export const getAllProducts = (req, res) => {
   Product.find({})
     .exec()
     .then((products) => {
@@ -22,6 +22,7 @@ exports.getAllProductsJSON = (req, res) => {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 exports.getAllProductsJSONRendered = (req, res) => {
     Product.find({})
         .exec()
@@ -36,6 +37,9 @@ exports.getFilteredProducts = (req, res) => {
 =======
 const getFilteredProducts = (req, res) => {
 >>>>>>> 7444d9c (chore: modules are better for ts...)
+=======
+export const getFilteredProducts = (req, res) => {
+>>>>>>> b349367 (feat: make main.ts run)
   let filter = {};
   const search = req.body.search;
   console.log("filter:" + search)
@@ -53,7 +57,7 @@ const getFilteredProducts = (req, res) => {
     });
 }
 
-const saveProduct = (req, res) => {
+export const saveProduct = (req, res) => {
   new Product(
     req.body.productID,
     req.body.name,
@@ -71,5 +75,3 @@ const saveProduct = (req, res) => {
       }
     })
 }
-
-export default {getAllProducts, getFilteredProducts, saveProduct};

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./built",
+    "allowJs": true,
+    "module": "ESNext",
+    "target": "ES6",
+    "strict": true,
+    "moduleResolution": "Bundler"
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
+
+}

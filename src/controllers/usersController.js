@@ -17,7 +17,7 @@ async function verifyPassword(hashOfPassword, plainTextPassword) {
     }
 }
 
-const renderUsersTable = (req, res) => {
+export const renderUsersTable = (req, res) => {
   User.find({})
     .then((users) => {
       res.render('usersTable', { users: users });
@@ -27,10 +27,10 @@ const renderUsersTable = (req, res) => {
     });
 }
 
-const renderLogin = (req, res) => {
+export const renderLogin = (req, res) => {
   res.render('login');
 }
-const loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
     User.findOne({email: req.body.user})
         .then(async (user) => {
             if (user == null) {
@@ -53,7 +53,7 @@ const loginUser = async (req, res) => {
             console.error(error);
         })
 }
-const updateUser = (req, res) => {
+export const updateUser = (req, res) => {
   const update = {};
   update[req.body.key] = req.body.value;
   User.findByIdAndUpdate(req.body.id, update, { new: true })
@@ -70,7 +70,7 @@ const updateUser = (req, res) => {
     });
 }
 
-const deleteUser = (req, res) => {
+export const deleteUser = (req, res) => {
   User.findByIdAndDelete(req.body.id)
     .then((user) => {
       if (user === null) {
@@ -84,7 +84,7 @@ const deleteUser = (req, res) => {
       res.render('register');
     });
 }
-const renderUser = (req, res) => {
+export const renderUser = (req, res) => {
   console.log(req.body.id)
   User.findById(req.body.id)
     .then((user) => {
@@ -133,5 +133,3 @@ passport.deserializeUser(async (email, done) => {
         done(err);
     }
 });
-
-export default {renderUser, renderUsersTable, renderLogin, loginUser, updateUser, deleteUser};

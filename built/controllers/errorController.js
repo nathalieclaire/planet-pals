@@ -1,5 +1,4 @@
 import httpStatus from "http-status-codes";
-
 export function pageNotFoundError(req, res) {
     let errorCode = httpStatus.NOT_FOUND;
     res.status(errorCode);

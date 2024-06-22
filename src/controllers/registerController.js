@@ -2,7 +2,7 @@ import argon2 from "argon2";
 
 import User from './../models/userModel.js';
 
-const renderRegisterView = (req, res) => {
+export const renderRegisterView = (req, res) => {
   res.render('register', {id:''});
 }
 async function hashPassword(plainTextPassword) {
@@ -10,11 +10,15 @@ async function hashPassword(plainTextPassword) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 exports.registerUser = async (req, res) => {
     console.log(req.body);
 =======
 const registerUser = async (req, res) => {
 >>>>>>> 7444d9c (chore: modules are better for ts...)
+=======
+export const registerUser = async (req, res) => {
+>>>>>>> b349367 (feat: make main.ts run)
   new User(
     {
       firstName: req.body.firstName,
@@ -36,5 +40,3 @@ const registerUser = async (req, res) => {
       }
     })
 }
-
-export default {renderRegisterView, registerUser};
