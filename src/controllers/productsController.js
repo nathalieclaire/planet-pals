@@ -1,6 +1,6 @@
 import Product from './../models/productModel.js';
 
-const getAllProducts = (req, res) => {
+export const getAllProducts = (req, res) => {
   Product.find({})
     .exec()
     .then((products) => {
@@ -12,7 +12,7 @@ const getAllProducts = (req, res) => {
     });
 }
 
-const getFilteredProducts = (req, res) => {
+export const getFilteredProducts = (req, res) => {
   let filter = {};
   const search = req.body.search;
   console.log("filter:" + search)
@@ -30,7 +30,7 @@ const getFilteredProducts = (req, res) => {
     });
 }
 
-const saveProduct = (req, res) => {
+export const saveProduct = (req, res) => {
   new Product(
     req.body.productID,
     req.body.name,
@@ -48,5 +48,3 @@ const saveProduct = (req, res) => {
       }
     })
 }
-
-export default {getAllProducts, getFilteredProducts, saveProduct};
