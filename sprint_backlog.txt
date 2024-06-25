@@ -2,12 +2,13 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
-
+- sort routes
+- modify some controller actions to respond with Embedded JavaScript (EJS) and JSON, depending on the query parameters
+- test your new API connection
 
 
 IN PROGRESS
 
 
 DONE
-- implement login with authenticaton
-- implement logout
+

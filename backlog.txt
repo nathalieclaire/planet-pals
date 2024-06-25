@@ -55,3 +55,5 @@ DONE
 - update User: app.put("/profile/:email", usersController.updateUser);
 - delete User: app.delete("/profile/:email", usersController.deleteUser);
 - add support for user login based on user id and password
+- implement login with authenticaton
+- implement logout
