@@ -1,10 +1,12 @@
+import {Request, Response} from 'express';
+
 import Product from './../models/productModel.js';
 
-export const getAllProducts = (req, res) => {
+export function getAllProducts(req: Request, res: Response) {
   Product.find({})
     .exec()
     .then((products) => {
-      res.render('searchview', { products: products });
+      res.render('searchview', {products: products});
     })
     .catch((error) => {
       console.error(error.message);
@@ -21,8 +23,6 @@ exports.getAllProductsJSON = (req, res) => {
       });
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 exports.getAllProductsJSONRendered = (req, res) => {
     Product.find({})
         .exec()
@@ -33,23 +33,17 @@ exports.getAllProductsJSONRendered = (req, res) => {
             console.error(error.message);
         });
 }
-exports.getFilteredProducts = (req, res) => {
-=======
-const getFilteredProducts = (req, res) => {
->>>>>>> 7444d9c (chore: modules are better for ts...)
-=======
-export const getFilteredProducts = (req, res) => {
->>>>>>> b349367 (feat: make main.ts run)
+  export function getFilteredProducts(req: Request, res: Response) {
   let filter = {};
   const search = req.body.search;
   console.log("filter:" + search)
   if (search !== "") {
-    filter = { name: search };
+    filter = {name: search};
   }
   Product.find(filter)
     .exec()
     .then((products) => {
-      res.render('searchview-products', { products: products });
+      res.render('searchview-products', {products: products});
     })
     .catch((error) => {
       console.error(error.message);
@@ -57,7 +51,8 @@ export const getFilteredProducts = (req, res) => {
     });
 }
 
-export const saveProduct = (req, res) => {
+/*
+export function saveProduct(req: Request, res: Response) {
   new Product(
     req.body.productID,
     req.body.name,
@@ -75,3 +70,4 @@ export const saveProduct = (req, res) => {
       }
     })
 }
+ */

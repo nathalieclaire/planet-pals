@@ -1,4 +1,6 @@
-const data = [
+import {IUser} from "./userModel";
+
+const data: IUser[] = [
   {
     firstName: 'Abducted',
     lastName: 'Rhino',

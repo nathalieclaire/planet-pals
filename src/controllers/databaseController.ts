@@ -1,13 +1,13 @@
-import Product from './../models/productModel.js';
-import User from './../models/userModel.js';
+import Product, {IProduct} from './../models/productModel.js';
+import User, {IUser} from './../models/userModel.js';
 
 
-export const create_product = (item) => {
+export const create_product = (item: IProduct) => {
   const product = new Product(item);
   product.save().then(() => console.log(`saved ${product.name}`));
 }
 
-export const fill = (seed) => {
+export const fill = (seed: IProduct[]) => {
   for (const item of seed) {
     const product = new Product(item);
     product
@@ -17,7 +17,7 @@ export const fill = (seed) => {
   }
 }
 
-export const fillUsers = (seed) => {
+export const fillUsers = (seed: IUser[]) => {
   for (const item of seed) {
     const user = new User(item);
     user

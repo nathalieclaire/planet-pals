@@ -2,15 +2,15 @@ import mongoose from 'mongoose';
 const UserSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: false
+        required: true
     },
     lastName: {
         type: String,
-        required: false
+        required: true
     },
     email: {
         type: String,
-        required: false
+        required: true
     },
     password: {
         type: String,
@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
     },
     address: {
         type: String,
-        required: false
+        required: true
     },
     // Add a reference to the shoppingCart model
     // (one user can have exactly one shopping cart, and one shopping cart is owned by exactly one user)

@@ -1,5 +1,5 @@
 import Product from './../models/productModel.js';
-export const getAllProducts = (req, res) => {
+export function getAllProducts(req, res) {
     Product.find({})
         .exec()
         .then((products) => {
@@ -9,8 +9,8 @@ export const getAllProducts = (req, res) => {
         console.error(error.message);
         return [];
     });
-};
-export const getFilteredProducts = (req, res) => {
+}
+export function getFilteredProducts(req, res) {
     let filter = {};
     const search = req.body.search;
     console.log("filter:" + search);
@@ -26,17 +26,24 @@ export const getFilteredProducts = (req, res) => {
         console.error(error.message);
         return [];
     });
-};
-export const saveProduct = (req, res) => {
-    new Product(req.body.productID, req.body.name, req.body.price, req.body.quantity, req.body.description)
-        .save()
-        .then(result => {
-        res.render('thanks');
+}
+/*
+export function saveProduct(req: Request, res: Response) {
+  new Product(
+    req.body.productID,
+    req.body.name,
+    req.body.price,
+    req.body.quantity,
+    req.body.description)
+    .save()
+    .then(result => {
+      res.render('thanks');
     })
-        .catch(error => {
-        if (error) {
-            console.error(error.message);
-            res.send(error);
-        }
-    });
-};
+    .catch(error => {
+      if (error) {
+        console.error(error.message);
+        res.send(error);
+      }
+    })
+}
+ */
