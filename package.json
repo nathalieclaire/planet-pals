@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha",
     "start": "nodemon .",
-    "compile": "tsc && node built/main.js",
+    "compile": "tsc && node dist/main.js",
     "dev": "./node_modules/nodemon/bin/nodemon.js -e ts  --exec \"npm run compile\""
   },
   "author": "Estella, Tobias, Nathalie",

@@ -49,6 +49,22 @@ exports.getAllProductsJSONRendered = (req, res) => {
       console.error(error.message);
       return [];
     });
+export function getFilteredProducts(req: Request, res: Response) {
+    let filter = {};
+    const search = req.body.search;
+    console.log("filter:" + search)
+    if (search !== "") {
+        filter = {name: search};
+    }
+    Product.find(filter)
+        .exec()
+        .then((products) => {
+            res.render('searchview-products', {products: products});
+        })
+        .catch((error) => {
+            console.error(error.message);
+            return [];
+        });
 }
 
 /*
