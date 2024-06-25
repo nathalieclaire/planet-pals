@@ -8,6 +8,7 @@ async function hashPassword(plainTextPassword) {
 }
 
 exports.registerUser = async (req, res) => {
+    console.log(req.body);
   new User(
     {
       firstName: req.body.firstName,

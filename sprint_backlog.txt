@@ -2,9 +2,6 @@ Product Owner: Nathalie
 Scrum Master: Estella
 
 BACKLOG
-- sort routes
-- modify some controller actions to respond with Embedded JavaScript (EJS) and JSON, depending on the query parameters
-- test your new API connection
 
 
 IN PROGRESS
@@ -12,3 +9,7 @@ IN PROGRESS
 
 DONE
 
+- sort routes
+- modify some controller actions to respond with Embedded JavaScript (EJS) and JSON, depending on the query parameters
+- test your new API connection
+- as a developer, I want to be able to access the data through an API (/api/products)

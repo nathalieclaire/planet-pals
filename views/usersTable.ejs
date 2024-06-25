@@ -26,7 +26,7 @@
                     <td><input name="email" type="email" value="<%= user.email %>"></input></td>
                     <td><input name="address" type="text" value="<%= user.address %>"></input></td>
                 </div>
-                <td><button name="update" hx-put="/users" hx-target="closest div" hx-include="closest div">Update</button></td>
+                <td><button name="update" hx-put="/users/users" hx-target="closest div" hx-include="closest div">Update</button></td>
             </tr>  
             <% }) %>
             </tbody>
