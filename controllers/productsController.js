@@ -8,10 +8,29 @@ exports.getAllProducts = (req, res) => {
     })
     .catch((error) => {
       console.error(error.message);
-      return [];
     });
 }
+exports.getAllProductsJSON = (req, res) => {
+  Product.find({})
+      .exec()
+      .then((products) => {
+        res.json(products);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+}
 
+exports.getAllProductsJSONRendered = (req, res) => {
+    Product.find({})
+        .exec()
+        .then((products) => {
+            res.render("products_via_api", {json: JSON.stringify(products)});
+        })
+        .catch((error) => {
+            console.error(error.message);
+        });
+}
 exports.getFilteredProducts = (req, res) => {
   let filter = {};
   const search = req.body.search;

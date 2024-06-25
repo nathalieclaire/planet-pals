@@ -13,23 +13,23 @@
         <li style="display: flex; flex-direction: row;">
             <p id="firstName"><%= user.firstName %></p>
             <input name="value" type="text" value="<%= user.firstName %>"></input>
-            <button hx-trigger="click" hx-put="/profile" hx-vars="{id:localStorage.getItem('id'), key:'firstName'}" hx-swap="outerHTML" hx-target="#firstName" hx-include="previous input">Update</button>
+            <button hx-trigger="click" hx-put="/users/profile" hx-vars="{id:localStorage.getItem('id'), key:'firstName'}" hx-swap="outerHTML" hx-target="#firstName" hx-include="previous input">Update</button>
         </li>
         <li style="display: flex; flex-direction: row;">
             <p id="lastName"><%= user.lastName %></p>
             <input name="value" type="text" value="<%= user.lastName %>"></input>
-            <button hx-trigger="click" hx-put="/profile" hx-vars="{id:localStorage.getItem('id'), key:'lastName'}" hx-swap="outerHTML" hx-target="#lastName" hx-include="previous input">Update</button>
+            <button hx-trigger="click" hx-put="/users/profile" hx-vars="{id:localStorage.getItem('id'), key:'lastName'}" hx-swap="outerHTML" hx-target="#lastName" hx-include="previous input">Update</button>
         </li>
         <li style="display: flex; flex-direction: row;">
             <p id="email"><%= user.email %></p>
             <input name="value" type="email" value="<%= user.email %>"></input>
-            <button hx-trigger="click" hx-put="/profile" hx-vars="{id:localStorage.getItem('id'), key:'email'}" hx-swap="outerHTML" hx-target="#email" hx-include="previous input">Update</button>
+            <button hx-trigger="click" hx-put="/users/profile" hx-vars="{id:localStorage.getItem('id'), key:'email'}" hx-swap="outerHTML" hx-target="#email" hx-include="previous input">Update</button>
         </li>
         <li style="display: flex; flex-direction: row;">
             <p id="address"><%= user.address %></p>
             <input name="value" type="text" value="<%= user.address %>"></input>
-            <button hx-trigger="click" hx-put="/profile" hx-vars="{id:localStorage.getItem('id'), key:'address'}" hx-swap="outerHTML" hx-target="#address" hx-include="previous input">Update</button>
+            <button hx-trigger="click" hx-put="/users/profile" hx-vars="{id:localStorage.getItem('id'), key:'address'}" hx-swap="outerHTML" hx-target="#address" hx-include="previous input">Update</button>
         </li>
     </ul>
-    <button hx-delete="/profile" hx-vars="id:localStorage.getItem('id')" hx-target="body">Delete</button>
+    <button hx-delete="/users/profile" hx-vars="id:localStorage.getItem('id')" hx-target="body">Delete</button>
 </body>
