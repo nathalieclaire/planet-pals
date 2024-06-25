@@ -20,6 +20,7 @@ const utilRoutes = require("./routes/utilRoutes");
 const homeRoutes = require("./routes/homeRoutes");
 const productRoutes = require("./routes/productRoutes");
 const errorRoutes = require("./routes/errorRoutes");
+const apiRoutes = require("./routes/apiRoutes");
 
 mongoose.connect('mongodb://localhost:27017/basic');
 mongoose.connection.once('open', () => { console.log('open!') }) // delete?
@@ -32,6 +33,7 @@ const router = express.Router();
 router.use("/users", userRoutes);
 router.use("/utils", utilRoutes);
 router.use("/products", productRoutes);
+router.use("/api", apiRoutes);
 router.use("/", homeRoutes);
 router.use("/", errorRoutes);
 
@@ -48,6 +50,8 @@ app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use("/", router);
 
 const port = app.get("port");
 app.listen(port, () => {

@@ -3,7 +3,6 @@ const router = require("express").Router();
 
 const usersController = require("../controllers/usersController");
 const registerController = require("../controllers/registerController");
-const homeController = require("../controllers/homeController");
 
 router.get("/users", usersController.renderUsersTable);
 router.put("/users", usersController.updateUser);
