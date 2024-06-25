@@ -28,15 +28,16 @@ IN PROGRESS
 
 DONE
 
-
+- sort routes
+- modify some controller actions to respond with Embedded JavaScript (EJS) and JSON, depending on the query parameters
+- test your new API connection
+- as a developer, I want to be able to access the data through an API (/api/products)
 ```
 
 ## The stories you've implemented in this sprint
 
-
+- as a developer, I want to be able to access the data through an API (/api/products)
 
 ## Reflection
 
-process and external issues that prevented you from working towards the sprint goal:
-
-steps to improve the situation for upcoming sprint:
+We were able to split the work more efficiently this time.
