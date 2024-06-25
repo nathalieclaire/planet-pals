@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import argon2 from 'argon2';
 import passport from "passport";
-import LocalStrategy from "passport-local";
 import User from './../models/userModel.js';
+import { Strategy as StrategyLocal } from "passport-local";
 function verifyPassword(hashOfPassword, plainTextPassword) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -45,6 +45,7 @@ export const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, functio
         if (user == null) {
             console.log('user not found:' + req.body.user);
             res.render('register');
+            return;
         }
         console.log(user);
         const result = yield verifyPassword(user.password, req.body.password);
@@ -65,7 +66,7 @@ export const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, functio
     });
 });
 export const updateUser = (req, res) => {
-    const update = {};
+    const update = {}; // TODO: any type
     update[req.body.key] = req.body.value;
     User.findByIdAndUpdate(req.body.id, update, { new: true })
         .then((user) => {
@@ -112,10 +113,14 @@ export const renderUser = (req, res) => {
         res.render('register');
     });
 };
-passport.use(new LocalStrategy({ passReqToCallback: true }, function (req, email, pass, done) {
+passport.use(new StrategyLocal({ passReqToCallback: true }, function (req, email, pass, done) {
     console.log("made it!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     User.findOne({ email: email })
-        .then((user) => verify(req, user, done))
+        .then((user) => {
+        if (user != null) {
+            verify(req, user, done);
+        }
+    })
         .catch((err) => done(err));
 }));
 function verify(req, user, done) {
@@ -143,4 +148,3 @@ passport.deserializeUser((email, done) => __awaiter(void 0, void 0, void 0, func
         done(err);
     }
 }));
-export default { renderUser, renderUsersTable, renderLogin, loginUser, updateUser, deleteUser };

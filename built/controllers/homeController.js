@@ -19,7 +19,7 @@ export const renderShoppingCart = (req, res) => {
     res.render("shoppingcart", { user: req.user });
 };
 export const renderSearchView = (req, res) => {
-    res.render("searchview", { products: req.data });
+    res.render("searchview", { products: req.body.data });
 };
 export const renderProductView = (req, res) => {
     const productID = req.params.productID;

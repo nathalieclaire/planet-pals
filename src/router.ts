@@ -1,6 +1,8 @@
+/*
 const httpStatus = require("http-status-codes"),
     contentTypes = require("./contentTypes.js"),
     utils = require("./utils");
+
 
 // create route objects to hold route functions
 const routes = {
@@ -25,3 +27,4 @@ exports.get = (url, action) => {
 exports.post = (url, action) => {
     routes["POST"][url] = action;
 };
+*/

@@ -1,10 +1,12 @@
+import {Request, Response} from 'express';
+
 import Product from './../models/productModel.js';
 
-export const getAllProducts = (req, res) => {
+export function getAllProducts(req: Request, res: Response) {
   Product.find({})
     .exec()
     .then((products) => {
-      res.render('searchview', { products: products });
+      res.render('searchview', {products: products});
     })
     .catch((error) => {
       console.error(error.message);
@@ -12,17 +14,17 @@ export const getAllProducts = (req, res) => {
     });
 }
 
-export const getFilteredProducts = (req, res) => {
+export function getFilteredProducts(req: Request, res: Response) {
   let filter = {};
   const search = req.body.search;
   console.log("filter:" + search)
   if (search !== "") {
-    filter = { name: search };
+    filter = {name: search};
   }
   Product.find(filter)
     .exec()
     .then((products) => {
-      res.render('searchview-products', { products: products });
+      res.render('searchview-products', {products: products});
     })
     .catch((error) => {
       console.error(error.message);
@@ -30,7 +32,8 @@ export const getFilteredProducts = (req, res) => {
     });
 }
 
-export const saveProduct = (req, res) => {
+/*
+export function saveProduct(req: Request, res: Response) {
   new Product(
     req.body.productID,
     req.body.name,
@@ -48,3 +51,4 @@ export const saveProduct = (req, res) => {
       }
     })
 }
+ */

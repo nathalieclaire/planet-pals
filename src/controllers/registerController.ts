@@ -1,15 +1,17 @@
-import argon2 from "argon2";
+import argon2, {} from "argon2";
+import {Request, Response} from "express";
 
 import User from './../models/userModel.js';
 
-export const renderRegisterView = (req, res) => {
-  res.render('register', {id:''});
-}
-async function hashPassword(plainTextPassword) {
-    return await argon2.hash(plainTextPassword);
+export function renderRegisterView(req: Request, res: Response) {
+  res.render('register', {id: ''});
 }
 
-export const registerUser = async (req, res) => {
+async function hashPassword(plainTextPassword: string): Promise<string> {
+  return argon2.hash(plainTextPassword);
+}
+
+export async function registerUser(req: Request, res: Response) {
   new User(
     {
       firstName: req.body.firstName,
@@ -27,7 +29,7 @@ export const registerUser = async (req, res) => {
     .catch(error => {
       if (error) {
         console.error(error.message);
-        res.render('register_fail', { message: error.message });
+        res.render('register_fail', {message: error.message});
       }
     })
 }
