@@ -1,12 +1,15 @@
-const products = {
-    stickynotebert:{   
+import {IProduct} from "../models/productModel";
+import {Request, Response} from "express";
+
+const products: any = {
+    stickynotebert: {
         productID: 1,
         name: "Stickynotebert",
         price: 9.99,
         quantity: 50,
         description: "Meet Stickynotebert, the friendly sticky note from planet Paperonia. Stickynotebert helps you organize your thoughts and keep track of important tasks.",
     },
-    gizmotron:{
+    gizmotron: {
         productID: 2,
         name: "GizmoTron",
         price: 24.99,
@@ -16,28 +19,28 @@ const products = {
 };
 
 
-exports.renderShoppingCart = (req, res) => {
-    console.log('yeeeeeeeeeeeeeeee;',req.user)
+export const renderShoppingCart = (req: Request, res: Response) => {
+    console.log('yeeeeeeeeeeeeeeee;', req.user)
     res.render("shoppingcart", {user: req.user});
 };
 
 
-exports.renderSearchView = (req, res) => {
-    res.render("searchview", {products: req.data});
+export const renderSearchView = (req: Request, res: Response) => {
+    res.render("searchview", {products: req.body.data});
 }
 
 
-exports.renderProductView = (req, res) => {
+export const renderProductView = (req: Request, res: Response) => {
     const productID = req.params.productID;
     const product = products[productID];
     res.render("product", {product});
 };
 
 
-exports.renderIndex = (req, res) => {
-    res.render("index", { username: req.params.username });
+export const renderIndex = (req: Request, res: Response) => {
+    res.render("index", {username: req.params.username});
 };
 
-exports.renderIndex2 = (req, res) => {
-    res.render("index", { username: 'Tobi' });
+export const renderIndex2 = (req: Request, res: Response) => {
+    res.render("index", {username: 'Tobi'});
 };

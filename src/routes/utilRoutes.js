@@ -1,7 +1,7 @@
-const router = require("express").Router();
+import {Router} from "express";
+import * as utils from "../utils.js";
 
-const utils = require("../utils");
-
+const router = Router();
 router.get("/bootstrap.css", (req, res) => {
     res.writeHead(200, contentTypes.css);
     utils.getFile("public/css/bootstrap-4.0.0-dist/css/bootstrap.min.css", res);
@@ -11,4 +11,4 @@ router.get("/htmx.min.js", (req, res) => {
     utils.getFile("public/js/htmx.min.js", res);
 });
 
-module.exports = router;
+export default router;

@@ -1,9 +1,9 @@
-const passport = require("passport");
-const router = require("express").Router();
+import passport from "passport";
+import {Router} from "express";
+import * as usersController from "../controllers/usersController.js";
+import * as registerController from "../controllers/registerController.js";
 
-const usersController = require("../controllers/usersController");
-const registerController = require("../controllers/registerController");
-
+const router = Router();
 router.get("/users", usersController.renderUsersTable);
 router.put("/users", usersController.updateUser);
 router.get("/register", registerController.renderRegisterView);
@@ -14,8 +14,10 @@ router.put("/profile", usersController.updateUser);
 router.delete("/profile", usersController.deleteUser);
 router.get("/login", usersController.renderLogin);
 router.post("/login/password",
-    passport.authenticate('local', { failureRedirect: '/login', failureFlash: true,
-        successRedirect: '/'}));
+    passport.authenticate('local', {
+        failureRedirect: '/login', failureFlash: true,
+        successRedirect: '/'
+    }));
 router.post("/logout", (req, res, next) => {
     req.logout((err) => {
         if (err) {
@@ -27,4 +29,4 @@ router.post("/logout", (req, res, next) => {
     })
 })
 
-module.exports = router;
+export default router;

@@ -3,3 +3,4 @@ node_modules/
 .idea/
 localhost-key.pem
 localhost.pem
+dist/*
