@@ -30,6 +30,9 @@
             <input name="value" type="text" value="<%= user.address %>"></input>
             <button hx-trigger="click" hx-put="/users/profile" hx-vars="{id:localStorage.getItem('id'), key:'address'}" hx-swap="outerHTML" hx-target="#address" hx-include="previous input">Update</button>
         </li>
+        <li>
+            <p><%= user.apiToken %></p>
+        </li>
     </ul>
     <button hx-delete="/users/profile" hx-vars="id:localStorage.getItem('id')" hx-target="body">Delete</button>
 </body>
