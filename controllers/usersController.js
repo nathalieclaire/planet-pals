@@ -50,6 +50,21 @@ exports.renderUsersTable = (req, res) => {
 exports.renderLogin = (req, res) => {
   res.render('login');
 }
+exports.renderProfile = (req, res) => {
+    console.log(req.query)
+    console.log(req.query.apiToken)
+    User.findOne({apiToken: req.query.apiToken})
+        .then(async (user) => {
+            if (user == null) {
+                console.log('user not found:');
+                res.render('error')
+            }
+            res.render('profile', {user: user});
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+}
 exports.loginUser = async (req, res) => {
     User.findOne({email: req.body.user})
         .then(async (user) => {

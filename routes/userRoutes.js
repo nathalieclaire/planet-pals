@@ -8,7 +8,7 @@ router.get("/users", usersController.renderUsersTable);
 router.put("/users", usersController.updateUser);
 router.get("/register", registerController.renderRegisterView);
 router.post("/register", registerController.registerUser);
-router.get("/profile", usersController.renderLogin);
+router.get("/profile", usersController.renderProfile);
 router.post("/profile", usersController.renderUser);
 router.put("/profile", usersController.updateUser);
 router.delete("/profile", usersController.deleteUser);
