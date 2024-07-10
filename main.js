@@ -22,7 +22,7 @@ const productRoutes = require("./routes/productRoutes");
 const errorRoutes = require("./routes/errorRoutes");
 const apiRoutes = require("./routes/apiRoutes");
 
-mongoose.connect('mongodb://localhost:27017/basic');
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/basic');
 mongoose.connection.once('open', () => { console.log('open!') }) // delete?
 
 db.fill(productSeed);

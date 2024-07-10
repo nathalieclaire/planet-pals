@@ -1,0 +1,17 @@
+services:
+  web:
+    env_file:
+      - "docker.env"
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    cpus: 0.5
+    mem_limit: 512m
+  mongo:
+    image: "mongo:8.0.0-rc4"
+    ports:
+      - "27017:27017"
+    cpus: 0.5
+    mem_limit: 512m
