@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon ."
+    "start": "MONGO_URL=\"mongodb://localhost:27017/basic\" nodemon .",
+    "build": "node main.js"
   },
   "author": "Estella, Tobias, Nathalie",
   "license": "ISC",
