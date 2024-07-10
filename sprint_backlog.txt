@@ -9,4 +9,4 @@ IN PROGRESS
 
 DONE
 
-- add API key (user token) 
+- dockerize the project
