@@ -2,7 +2,7 @@
 
 ## Your project name
 
-planet-pals - [v12.0.0](https://github.com/nathalieclaire/planet-pals/releases/tag/v12.0.0)
+planet-pals - [v12.0.1](https://github.com/nathalieclaire/planet-pals/releases/tag/v12.0.1)
 
 ## Team members of PlanetPals
 
