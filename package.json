@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "start": "MONGO_URL=\"mongodb://localhost:27017/basic\" nodemon .",
-    "build": "node main.js"
+    "build-bg": "webpack --config webpack.config.js",
+    "build": "node main.js",
   },
   "author": "Estella, Tobias, Nathalie",
   "license": "ISC",
@@ -24,10 +25,12 @@
     "passport-local": "^1.0.0",
     "passport-strategy": "^1.0.0",
     "rand-token": "^1.0.1",
-    "serve-static": "^1.15.0"
+    "serve-static": "^1.15.0",
+    "three": "^0.167.0"
   },
   "devDependencies": {
     "mocha": "^10.4.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "webpack-cli": "^5.1.4"
   }
 }

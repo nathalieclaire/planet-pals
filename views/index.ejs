@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
-    <link rel="stylesheet" href="/bootstrap.css"> 
+    <link rel="stylesheet" href="/bootstrap.css">
+    <script src="js/htmx.min.js"></script>
+    <style>
+        canvas{
+            position:absolute;
+            left:0;
+            top:0;
+            z-index:-1;
+        }
+    </style>
 </head>
     <body>
         <form action="/users/logout" method="post">
@@ -17,5 +26,6 @@
             <li>Estella Kinzel</li>
             <li>Nathalie Claire Huppert</li>
         </ul>
+        <script type="module" src="js/background.bundle.js"></script>
     </body>
 </html>
