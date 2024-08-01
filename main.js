@@ -31,7 +31,7 @@ db.fillUsers(userSeed);
 const app = express();
 const router = express.Router();
 router.use("/users", userRoutes);
-router.use("/utils", utilRoutes);
+router.use("/", utilRoutes);
 router.use("/products", productRoutes);
 router.use("/api", apiRoutes);
 router.use("/", homeRoutes);
